@@ -331,6 +331,7 @@ static unsigned char cpzn2_protection_hack [] =
 static unsigned char psarc95_protection_hack [] =
 {
 	/* not dumped yet */
+	0x00
 };
 
 static unsigned short n_sio0_ptr;

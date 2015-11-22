@@ -1,0 +1,96 @@
+VCMame 0.78
+-----------
+
+1:  Common steps
+2:  Compiling VCMame 0.78 under Visual C 6 (DevStudio)
+3:  Compiling VCMame 0.78 under Visual C 7/7.1 (.NET 2002 & .NET 2003)
+4:  Source patches
+
+--
+
+1: Common Steps
+---------------
+
+You need to install the NASMW assembler on your machine.  You can get it from the downloads 
+section of Mame website amongst other places (www.mame.net).  Make sure your Visual C 'exe' path
+(Tools -> Options -> Projects -> Directories) includes the directory where you install NASM.
+
+--
+
+2: Compiling VCMame 0.78 under Visual C 6 (DevStudio)
+-----------------------------------------------------
+
+Follow these steps, in this order!
+
+1) Unzip mame source to a location on your hard drive, eg, d:\mame\mame78
+2) Unzip zlib source to the same location with 'zlib' extension, eg, d:\mame\mame78\zlib
+3) Unzip vcmame78 source to the same bsae location, eg, d:\mame\mame78
+4) Make sure you have a copy of the DX9 SDK from Microsoft installed.
+
+You should now have the following directory layout:
+
+zlib/		(Zlib source)
+src/		(Standard Mame source)
+src/vc		(VC Mame header & patches)
+docs/		(Standard Mame docs)
+
+Plus these files at the root:
+
+vcmame.dsp
+vcmame.dsw
+a68000.dsp
+c68000.dsp
+chdman.dsp
+romcmp.dsp
+zlib.dsp
+xml2info.dsp
+
+Now, just load up vcmame.dsw and build the project!  Remember your built exe's will have the
+filenames vcmame.exe & vcmamed.exe so make sure you name your ini files vcmame.ini and 
+vcmamed.ini.
+
+4: Compiling VCMame 0.78 under Visual C 7/7.1 (.NET 2002 & .NET 2003)
+---------------------------------------------------------------------
+
+Follow these steps, in this order!
+
+1) Unzip mame source to a location on your hard drive, eg, d:\mame\mame78
+2) Unzip zlib source to the same location with 'zlib' extension, eg, d:\mame\mame78\zlib
+3) Unzip vcmame78 source to the same bsae location, eg, d:\mame\mame78
+4) Make sure you have a copy of the DX9 SDK from Microsoft installed.
+
+You should now have the following directory layout:
+
+zlib/		(Zlib source)
+src/		(Standard Mame source)
+src/vc		(VC Mame header & patches)
+docs/		(Standard Mame docs)
+
+Plus these files at the root:
+
+vcmame.sln
+vcmame.vcproj
+a68000.vcproj
+c68000.vcproj
+chdman.vcproj
+romcmp.vcproj
+zlib.vcproj
+xml2info.vcproj
+
+Now, just load up vcmame.sln and build the project!  Remember your built exe's will have the
+filenames vcmame.exe & vcmamed.exe so make sure you name your ini files vcmame.ini and 
+vcmamed.ini.
+
+--
+
+4:  Patches
+-----------
+
+The following files are patched from the official source:
+
+src/drivers/zn.c		(zero size array)
+src/vidhrdw/dynax.c		(C99 style variable use)
+
+--
+
+Bryan McPhail, mish@vcmame.net, 27/12/2003
